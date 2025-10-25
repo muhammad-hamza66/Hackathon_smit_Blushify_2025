@@ -1,16 +1,51 @@
-# React + Vite
+Blushify — Modern eCommerce Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Blushify is a modern, responsive eCommerce web application built with React and Bootstrap 5, designed for beauty and lifestyle products.
+It features a clean UI, dynamic cart system, product fetching via API, and smooth user experience — perfect for showcasing full-stack fundamentals at hackathons.
 
-Currently, two official plugins are available:
+🧠 Tech Stack
+Technology	Purpose
+⚛️ React.js	Frontend framework
+🎨 Bootstrap 5	UI design and responsive styling
+💾 Context API	Global state management for cart
+🌐 Axios	API integration for product data
+🛠️ Vite	Fast build and development setup
+💖 Swiper.js	Hero image slider
+🚀 Features
+🛍️ Product Display
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fetches live product data from H+ Sport API
 
-## React Compiler
+Displays clean product cards with name, image, price, and description
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Add to Cart button with instant update
 
-## Expanding the ESLint configuration
+🛒 Shopping Cart
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Add, increment, decrement, or remove items
+
+Displays total price dynamically
+
+Context-based global cart (persists across components)
+
+💅 Modern UI
+
+Fully responsive layout (Bootstrap Grid)
+
+Hero slider built with Swiper.js
+
+Elegant pink & cream theme inspired by beauty branding
+
+🧭 Navigation
+
+Responsive Navbar with icons (search, wishlist, cart)
+
+Dynamic cart item count
+
+Bootstrap modal for Sign Up / Login
+
+📩 Footer
+
+Brand section, quick links, newsletter form
+
+Social media icons and copyright
