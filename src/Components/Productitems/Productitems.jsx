@@ -3,7 +3,7 @@ import axios from "axios";
 import { useCart } from "../../Context/CartContext";
 import ProductCard from "../ProductCard/ProductCard";
 
-function Productitems() {
+function Productitems({ maxPrice = 1000 }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -13,10 +13,8 @@ function Productitems() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get("https://fakestoreapi.com/products");
-        console.log("Fetched products:", response.data);
         setProducts(response.data);
       } catch (err) {
-        console.error("Error fetching products:", err);
         setError(true);
       } finally {
         setLoading(false);
@@ -41,13 +39,13 @@ function Productitems() {
       </div>
     );
 
-  return (
-    <div className="container py-5">
-      <h2 className="text-center mb-5 fw-bold">🛍 Product List</h2>
+  const filteredProducts = products.filter((item) => item.price <= maxPrice);
 
+  return (
+    <div className="container py-4">
       <div className="row g-4">
-        {products.length > 0 ? (
-          products.map((item) => (
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((item) => (
             <div key={item.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
               <ProductCard product={item} addToCart={addToCart} />
             </div>

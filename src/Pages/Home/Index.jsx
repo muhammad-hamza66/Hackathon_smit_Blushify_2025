@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import Productitems from "../../Components/Productitems/Productitems"
+import Productitems from "../../Components/Productitems/Productitems";
 
 const Index = () => {
+  const [price, setPrice] = useState(100);
+
   return (
     <div>
       <div className="hero">
@@ -21,6 +23,7 @@ const Index = () => {
           modules={[Autoplay, EffectFade]}
           className="mySwiper"
         >
+          
           <SwiperSlide>
             <div className="hero-wrap hero-wrap1">
               <div className="hero-content text-center text-light">
@@ -38,6 +41,7 @@ const Index = () => {
               </div>
             </div>
           </SwiperSlide>
+
           <SwiperSlide>
             <div className="hero-wrap hero-wrap2">
               <div className="hero-content text-center text-light">
@@ -55,6 +59,7 @@ const Index = () => {
               </div>
             </div>
           </SwiperSlide>
+
           <SwiperSlide>
             <div className="hero-wrap hero-wrap3">
               <div className="hero-content text-center text-light">
@@ -78,7 +83,24 @@ const Index = () => {
       <section id="products" className="bg-light py-5">
         <div className="container">
           <h2 className="text-center mb-5 fw-bold">Featured Products</h2>
-          <Productitems />
+
+          <div className="text-center mb-5">
+            <label htmlFor="priceRange" className="form-label fw-semibold">
+              Filter by Price: <span className="text-success">${price}</span>
+            </label>
+            <input
+              type="range"
+              id="priceRange"
+              className="form-range w-50 mx-auto"
+              min="10"
+              max="1000"
+              step="10"
+              value={price}
+              onChange={(e) => setPrice(Number(e.target.value))}
+            />
+          </div>
+
+          <Productitems maxPrice={price} />
         </div>
       </section>
     </div>
